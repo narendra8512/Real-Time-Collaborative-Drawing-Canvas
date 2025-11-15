@@ -13,14 +13,14 @@ collaborative-canvas/
 
 # High-Level Architecture
 
-┌───────────────────┐        WebSocket (Socket.io)        ┌──────────────────────┐
-│     Client A      │  <──────────────────────────────>    │                      │
-│  HTML + Canvas     │                                       │      Node.js        │
-│  JS Rendering      │  <──────────────────────────────>    │  WebSocket Server    │
-└───────────────────┘                                       │   (socket.io)        │
-                                                            │                      │
-┌───────────────────┐                                       │ - Broadcast strokes  │
-│     Client B      │  <──────────────────────────────>    │ - Manage rooms       │
-│  Toolbar + Canvas │                                       │ - Sync state         │
-│  Socket Listener  │  <──────────────────────────────>    │                      │
-└───────────────────┘                                       └──────────────────────┘
+┌───────────────────┐  (Socket.io)        ┌──────────────────────┐
+│     Client A      │  <─────────────>    │                      │
+│  HTML + Canvas     │                    │      Node.js         │
+│  JS Rendering      │  <────────────>    │  WebSocket Server    │
+└───────────────────┘                     │   (socket.io)        │
+                                          │                      │
+┌───────────────────┐                     │ - Broadcast strokes  │
+│     Client B      │  <─────────────>    │ - Manage rooms       │
+│  Toolbar + Canvas │                     │ - Sync state         │
+│  Socket Listener  │  <─────────────>    │                      │
+└───────────────────┘                     └──────────────────────┘
