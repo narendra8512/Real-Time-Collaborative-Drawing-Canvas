@@ -55,6 +55,8 @@ const drawLineLocal = (fromX, fromY, toX, toY, color, width) => {
   ctx.beginPath();
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
+  ctx.shadowColor = "transparent";
+  ctx.shadowBlur = 0;
   ctx.strokeStyle = color;
   ctx.lineWidth = width;
   ctx.moveTo(fromX, fromY);
@@ -200,13 +202,20 @@ const drawLine = (e)=>{
     ctx.lineTo(e.offsetX,e.offsetY);
     ctx.stroke();
 };
-// const drawBrush = (e)=>{
-//     ctx.lineTo(e.offsetX,e.offsetY);
-//     ctx.shadowColor = selectedColor;
-//     ctx.shadowBlur = 15;
-//     // ctx.lineWidth = brushWidth;
-//     ctx.stroke();
-// };
+const drawBrush = (e)=>{
+    ctx.lineTo(e.offsetX, e.offsetY);
+    
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+
+    ctx.strokeStyle = selectedColor;   
+    ctx.lineWidth = brushWidth;        
+
+    ctx.shadowColor = selectedColor;  
+    ctx.shadowBlur = 15;               
+    
+    ctx.stroke();
+};
 function drawing(e) {
   if (!isDrawing) return;
   const p = getPointerPos(e);
