@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: grey;
+}
+.option:is(hover,.active) :where(span,label){
+    color: #0000ff;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    max-width: 1050px;
+}
+section{
+    background: white;
+}
+.tools{
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.tools .row{
+    border-right: 1px solid black;
+    margin-left: 10px;
+}
+.tools .options{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.row .options .option{
+    cursor: pointer;
+}
+#slideSlider{
+    width: 100px;
+}
+.tools .options li{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.tools .shapes .options{
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr 1fr); */ /* same work as below line*/
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+}
+.tools .shapes .title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.tools .colors{
+    border: none;
+}
+
+.colors .option{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    /* border: 1px solid black; */
+    margin-top: 3px;
+    position: relative;
+}
+.colors .option:nth-child(1){
+    background-color: #ffffff;
+    border: 1px solid black;
+}
+.colors .option:nth-child(2){
+    background-color: rgb(0, 0, 0);
+    border: 1px solid black;
+}
+.colors .option:nth-child(3){
+    background-color: #00ff00;
+    border: 1px solid black;
+}
+.colors .option:nth-child(4){
+    background-color: #0000ff;
+    border: 1px solid black;
+}
+.colors .option:nth-child(5){
+    background-color: #ff0000;
+    border: 1px solid black;
+}
+.colors .option:nth-child(6){
+    width: 50px;
+}
+
+.colors .option.selected::before{   /* working */
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    height: 12px;
+    width: 12px;
+    background: inherit;
+    border-radius: inherit;
+    border: 2px solid white;
+    transform: translate(-50%,-50%);
+}
+.colors .option:first-child.selected::before{
+    border-color: #ccc;
+}
+.drawing-area{
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+}
+#canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+button{
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
