@@ -11,12 +11,12 @@ const ctx = canvas.getContext("2d");
 
 
 const toolBtns = document.querySelectorAll(".tool");
-let fillColor = document.querySelector("#fillColor") || document.querySelector(".fillColor");
-let sizeSlider = document.querySelector("#slideSlider") || document.querySelector(".slideSlider");
+let fillColor = document.querySelector("#fillColor");
+let sizeSlider = document.querySelector("#slideSlider");
 let colorBtns = document.querySelectorAll(".colors .option");
-let colorPicker = document.querySelector("#colorPicker") || document.querySelector(".colorPicker");
-let clearCanvasBtn = document.querySelector(".clearCanvas") || document.querySelector("#clearCanvas");
-let saveImg = document.querySelector("#saveAsImg") || document.querySelector(".saveAsImg");
+let colorPicker = document.querySelector("#colorPicker");
+let clearCanvasBtn = document.querySelector(".clearCanvas");
+let saveImg = document.querySelector("#saveAsImg");
 const undoBtn = document.getElementById("undo");
 const redoBtn = document.getElementById("redo");
 
