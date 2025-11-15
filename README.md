@@ -47,4 +47,10 @@ When multiple users draw at the same time in the same region, some strokes may o
         - Designing basic tools (brush, shapes, eraser)
 
 ## Notes & improvements
-- In production you should persist ops to DB, send diffs instead of full replays, and implement per-user undo policies if required.
+- The project demonstrates real-time drawing using Socket.io and HTML Canvas.
+
+- Core features such as drawing, shapes, color selection, and multi-user synchronization work for most cases.
+
+- Some tools and optimizations are still incomplete due to time constraints.
+
+- The project is built in 3–4 days, so there is room for improvement in structure, performance, and tool behavior.
